@@ -1,0 +1,22 @@
+/* .signup-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.signupCard {
+    padding: 50px;
+}
+
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+
+.signup-title {
+    padding: 10px;
+}
+
+.selectRole {
+    height: 70px;
+}

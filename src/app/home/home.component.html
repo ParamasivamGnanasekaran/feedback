@@ -1,0 +1,22 @@
+<mat-toolbar color="primary" class="header">
+    <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <h1>Feedback collector</h1>
+    <button mat-icon-button (click)="onLogout()" color="warn">
+        <mat-icon>power_settings_new</mat-icon>
+    </button>
+</mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav #sidenav>
+        <mat-nav-list (click)="sidenav.toggle()">
+            <a mat-list-item routerLink="users"> Users List </a>
+            <a mat-list-item routerLink="profile"> Profile </a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="nav-content">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

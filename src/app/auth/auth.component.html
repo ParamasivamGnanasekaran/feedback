@@ -1,0 +1,17 @@
+<div class="auth-container">
+    <div class="toggle-button">
+        <button mat-raised-button [color]="selectSection ? 'accent' : ''" (click)="selectSection=true">LOGIN</button>
+        <button mat-raised-button [color]="!selectSection ? 'accent' : ''" (click)="selectSection=false">SIGN
+            UP</button>
+    </div>
+
+    <div *ngIf="selectSection">
+        <app-login>
+        </app-login>
+    </div>
+    <div *ngIf="!selectSection">
+        <app-signup>
+        </app-signup>
+    </div>
+
+</div>

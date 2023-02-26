@@ -1,0 +1,18 @@
+/* .login-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.loginCard {
+    padding: 50px;
+}
+
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+
+.login-title {
+    padding: 10px;
+}

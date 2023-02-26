@@ -1,0 +1,55 @@
+<div class="employee-container">
+    <mat-card class="employeeCard">
+        <mat-card-title class="employee-title">employee</mat-card-title>
+        <mat-card-content class="employee-content">
+            <form [formGroup]="employeeForm" (ngSubmit)="saveDetails()" autocomplete="off">
+                <div>
+                    <mat-form-field appearance="outline">
+                        <mat-label>User Name</mat-label>
+                        <input matInput type="text" formControlName="userName" placeholder="Your Name">
+                        <mat-icon matSuffix>person_outline</mat-icon>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Email Address</mat-label>
+                        <input matInput type="email" formControlName="email" placeholder="Your email">
+                        <mat-icon matSuffix>mail_outline</mat-icon>
+                    </mat-form-field>
+                </div>
+
+                <div>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Role</mat-label>
+                        <mat-select formControlName="role" name="role">
+                            <mat-option *ngFor="let role of roles" [value]="role.value">
+                                {{role.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Manager Name</mat-label>
+                        <input matInput type="text" formControlName="managerName" placeholder="Your Name">
+                        <mat-icon matSuffix>person_outline</mat-icon>
+                    </mat-form-field>
+                </div>
+
+                <div>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Team Name</mat-label>
+                        <input matInput type="text" formControlName="teamName" placeholder="Your Name">
+                        <mat-icon matSuffix>person_outline</mat-icon>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <button mat-raised-button color="primary" type="submit"
+                        [disabled]="!employeeForm.valid">submit</button>
+                    <button mat-button mat-dialog-close>Close</button>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

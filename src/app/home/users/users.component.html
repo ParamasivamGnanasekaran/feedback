@@ -1,0 +1,54 @@
+<div>
+    <div *ngIf="!dataSource">
+    </div>
+    <div *ngIf="dataSource" class="mat-elevation-z8 table">
+        <table mat-table [dataSource]="dataSource" class="demo-table" matSort #empTbSort="matSort">
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef> Id </th>
+                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="userName">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> userName
+                </th>
+                <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="email">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+                <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="managerName">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                    Manager Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.manager_name ? element.manager_name: 'click to add'}}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="teamName">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Team
+                    Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.team_name? element.team_name: 'click to add'}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="role">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Role </th>
+                <td mat-cell *matCellDef="let element"> {{element.role}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="delete">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Delete </th>
+                <td mat-cell *matCellDef="let element" (click)="deleteUser(element.id)">
+                    <mat-icon>delete_outline</mat-icon>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row (click)="openDialog(row,$event)" *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
+            aria-label="Select page of periodic elements">
+        </mat-paginator>
+    </div>
+</div>
